@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "916386980506",
+    "project_id": "healtypet-1cf33",
+    "storage_bucket": "healtypet-1cf33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916386980506:android:7b28d8eb8dc886c867f523",
+        "android_client_info": {
+          "package_name": "com.example.healtypet_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADNOBdZLduauHI2EN5-H51gt6ffVlSnnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

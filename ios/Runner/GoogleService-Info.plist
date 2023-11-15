@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCQjHVW9VeQCUvZkQHIMwm6vQrSCWMHGrQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>916386980506</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.healtypetApplication</string>
+	<key>PROJECT_ID</key>
+	<string>healtypet-1cf33</string>
+	<key>STORAGE_BUCKET</key>
+	<string>healtypet-1cf33.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:916386980506:ios:59f01077b3681c2867f523</string>
+</dict>
+</plist>
