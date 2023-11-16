@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:healtypet_application/features/presentation/pages/bottom_navigation.dart';
+
+import 'authentication/login_screen.dart';
 
 class IntroductionScreen extends StatelessWidget {
   const IntroductionScreen({super.key});
@@ -13,7 +14,7 @@ class IntroductionScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
-            builder: (context) => const BottomNavigationPages(),
+            builder: (context) => const LoginScreen(),
           ),
           (route) => false);
     });
