@@ -1,71 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:healtypet_application/features/presentation/routes/routes_name.dart';
+import 'package:healtypet_application/features/presentation/utils/colors.dart';
+import 'package:healtypet_application/features/presentation/utils/text_style.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:lottie/lottie.dart';
 
-import 'authentication/login_screen.dart';
-
-class IntroductionScreen extends StatelessWidget {
-  const IntroductionScreen({super.key});
+class IntroductionScreenPages extends StatelessWidget {
+  const IntroductionScreenPages({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-
-    Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(
-            builder: (context) => const LoginScreen(),
-          ),
-          (route) => false);
-    });
-
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(children: [
-        SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Image.asset(
-            'assets/images/Background_pet.png',
-            fit: BoxFit.cover,
+        body: IntroductionScreen(
+      pages: [
+        PageViewModel(
+          title: "Konsultasi dengan Mudah",
+          body:
+              "kamu bisa menanyakan kesehatan hewan mu pada dokter dengan mudah.",
+          image: SizedBox(
+            width: size.width * 0.6,
+            height: size.height * 0.6,
+            child: Lottie.asset('assets/lottie/main-laptop-duduk.json'),
           ),
         ),
-        Center(
-          child: SafeArea(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 42,
-              ),
-              Image.asset(
-                'assets/logo/logo.png',
-                height: 22,
-              ),
-              const SizedBox(
-                height: 73,
-              ),
-              RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  text: "Helping you\nto keep ",
-                  style: GoogleFonts.manrope(
-                      fontSize: 24,
-                      color: const Color(0xFFDEE1FE),
-                      letterSpacing: 3.5 / 100,
-                      height: 152 / 100),
-                  children: const [
-                    TextSpan(
-                        text: "your bestie",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w800)),
-                    TextSpan(text: "\nstay healthy!")
-                  ],
-                ),
-              )
-            ],
-          )),
+        PageViewModel(
+          title: "Title of introduction page",
+          body: "Welcome to the app! This is a description of how it works.",
+          image: SizedBox(
+            width: size.width * 0.6,
+            height: size.height * 0.6,
+            child: Lottie.asset('assets/lottie/ojek.json'),
+          ),
+        ),
+        PageViewModel(
+          title: "Title of introduction page",
+          body: "Welcome to the app! This is a description of how it works.",
+          image: SizedBox(
+            width: size.width * 0.6,
+            height: size.height * 0.6,
+            child: Lottie.asset('assets/lottie/register.json'),
+          ),
         )
-      ]),
-    );
+      ],
+      onDone: () {
+        Navigator.pushNamedAndRemoveUntil(
+            context, RouteName.loginScreen, (route) => false);
+      },
+      onSkip: () {},
+      showSkipButton: true,
+      skip: const Text("skip"),
+      next: const Text("next"),
+      done: Text(
+        "done",
+        style: text3(blackColor, bold),
+      ),
+      dotsDecorator: DotsDecorator(
+        size: const Size.square(10.0),
+        activeSize: const Size(20.0, 10.0),
+        color: greyLight,
+        spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+        activeShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+      ),
+    ));
   }
 }

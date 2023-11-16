@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healtypet_application/features/presentation/routes/routes_name.dart';
 
 import '../../../utils/colors.dart';
 import '../../../utils/text_style.dart';
@@ -83,7 +84,7 @@ class _FormLoginState extends State<FormLogin> {
                 "remember me",
                 style: text3(blackColor, regular),
               ),
-              const SizedBox(width: 105),
+              const SizedBox(width: 70),
               TextButton(
                 onPressed: () {},
                 child: Text(
@@ -100,7 +101,10 @@ class _FormLoginState extends State<FormLogin> {
             textColor: accentColor,
             color: primaryColor,
             borderColor: transparent,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, RouteName.bottomNavigation, (route) => false);
+            },
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 30),
@@ -120,46 +124,51 @@ class _FormLoginState extends State<FormLogin> {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              BuildButton(
-                icon: Image.asset(
-                  "assets/logo/google_icon.png",
-                  width: 25,
-                  height: 25,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BuildButton(
+                  icon: Image.asset(
+                    "assets/logo/google_icon.png",
+                    width: 25,
+                    height: 25,
+                  ),
+                  label: " Google",
+                  textColor: blackColor,
+                  color: transparent,
+                  borderColor: greyLight,
+                  onTap: () {},
                 ),
-                label: " Google",
-                textColor: blackColor,
-                color: transparent,
-                borderColor: greyLight,
-                onTap: () {},
-              ),
-              BuildButton(
-                icon: Image.asset(
-                  "assets/logo/facebook.png",
-                  width: 25,
-                  height: 25,
+                const SizedBox(width: 5),
+                BuildButton(
+                  icon: Image.asset(
+                    "assets/logo/facebook.png",
+                    width: 25,
+                    height: 25,
+                  ),
+                  label: " Facebook",
+                  textColor: blackColor,
+                  color: transparent,
+                  borderColor: greyLight,
+                  onTap: () {},
                 ),
-                label: " Facebook",
-                textColor: blackColor,
-                color: transparent,
-                borderColor: greyLight,
-                onTap: () {},
-              ),
-              BuildButton(
-                icon: Image.asset(
-                  "assets/logo/facebook.png",
-                  width: 25,
-                  height: 25,
-                ),
-                label: " Facebook",
-                textColor: blackColor,
-                color: transparent,
-                borderColor: greyLight,
-                onTap: () {},
-              )
-            ],
+                const SizedBox(width: 5),
+                BuildButton(
+                  icon: Image.asset(
+                    "assets/logo/facebook.png",
+                    width: 25,
+                    height: 25,
+                  ),
+                  label: " Facebook",
+                  textColor: blackColor,
+                  color: transparent,
+                  borderColor: greyLight,
+                  onTap: () {},
+                )
+              ],
+            ),
           ),
         ],
       ),
